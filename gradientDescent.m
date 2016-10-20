@@ -8,8 +8,8 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
 	theta_2 = theta(2,1);
 	
 	for iter = 1:num_iters
-		J = computeCost(X, y, theta);
-		H = hypothesis(theta,x);
+		J = costFunction(X, y, theta);
+		H = X*theta;
 		    
 		H_1 = (H - y) .* X(:,1);
 		H_2 = (H - y) .* X(:,2);

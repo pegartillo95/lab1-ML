@@ -28,7 +28,115 @@ fprintf('Normalizing Features ...\n');
 X = [ones(m, 1) X];
 
 
-%% ================ Part 2: Gradient Descent ================
+%% ================ Part 2.1: Gradient Descent with alpha 0,3 ================
+
+fprintf('Running gradient descent ...\n');
+
+% Choose some alpha value
+alpha = 0.3;
+num_iters = 400;
+
+% Init Theta and Run Gradient Descent 
+theta = zeros(3, 1);
+[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+
+% Plot the convergence graph
+figure;
+plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+xlabel('Number of iterations');
+ylabel('Cost J');
+
+% Display gradient descent's result
+fprintf('Theta computed from gradient descent with alpha = 0.3: \n');
+fprintf(' %f \n', theta);
+fprintf('\n');
+
+% Estimate the price of a 1650 sq-ft, 3 br house
+price = 0; % You should change this
+
+price = [1 (([1650 3] - mu) ./ sigma)] * theta;
+
+% ============================================================
+
+fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
+         '(using gradient descent):\n $%f\n'], price);
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+%% ================ Part 2.2: Gradient Descent with alpha 0,1 ================
+
+fprintf('Running gradient descent ...\n');
+
+% Choose some alpha value
+alpha = 0.1;
+num_iters = 400;
+
+% Init Theta and Run Gradient Descent 
+theta = zeros(3, 1);
+[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+
+% Plot the convergence graph
+figure;
+plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+xlabel('Number of iterations');
+ylabel('Cost J');
+
+% Display gradient descent's result
+fprintf('Theta computed from gradient descent with alpha = 0.1: \n');
+fprintf(' %f \n', theta);
+fprintf('\n');
+
+% Estimate the price of a 1650 sq-ft, 3 br house
+price = 0; % You should change this
+
+price = [1 (([1650 3] - mu) ./ sigma)] * theta;
+
+% ============================================================
+
+fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
+         '(using gradient descent):\n $%f\n'], price);
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+%% ================ Part 2.3: Gradient Descent with alpha 0,03 ================
+
+fprintf('Running gradient descent ...\n');
+
+% Choose some alpha value
+alpha = 0.03;
+num_iters = 400;
+
+% Init Theta and Run Gradient Descent 
+theta = zeros(3, 1);
+[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+
+% Plot the convergence graph
+figure;
+plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+xlabel('Number of iterations');
+ylabel('Cost J');
+
+% Display gradient descent's result
+fprintf('Theta computed from gradient descent with alpha = 0.03: \n');
+fprintf(' %f \n', theta);
+fprintf('\n');
+
+% Estimate the price of a 1650 sq-ft, 3 br house
+price = 0; % You should change this
+
+price = [1 (([1650 3] - mu) ./ sigma)] * theta;
+
+% ============================================================
+
+fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
+         '(using gradient descent):\n $%f\n'], price);
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
+
+%% ================ Part 2.4: Gradient Descent with alpha 0,01 ================
 
 fprintf('Running gradient descent ...\n');
 
@@ -47,7 +155,7 @@ xlabel('Number of iterations');
 ylabel('Cost J');
 
 % Display gradient descent's result
-fprintf('Theta computed from gradient descent: \n');
+fprintf('Theta computed from gradient descent with alpha = 0.03: \n');
 fprintf(' %f \n', theta);
 fprintf('\n');
 
